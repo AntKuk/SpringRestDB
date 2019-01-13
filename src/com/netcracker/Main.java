@@ -11,4 +11,6 @@ public class Main {
         ICompanyService companyService = (ICompanyService) context.getBean("companyService");
         System.out.println(companyService.getAllCompanies());
     }*/
+
+  //HELLO
 }
