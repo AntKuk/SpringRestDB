@@ -1,14 +1,15 @@
 package com.netcracker.model;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 
 @Entity
 @Table(name="bankacc")
-public class BankAccount {
+public class BankAccount implements BasicEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "coracc", nullable = false)
-    private int corAcc;
+    private BigInteger corAcc;
 
     @Column(name = "idbank", nullable = false)
     private int idBank;
@@ -24,11 +25,11 @@ public class BankAccount {
         this.idCom = tin;
     }
 
-    public int getCorAcc() {
+    public BigInteger getId() {
         return corAcc;
     }
 
-    public void setCorAcc(int corAcc) {
+    public void setId(BigInteger corAcc) {
         this.corAcc = corAcc;
     }
 

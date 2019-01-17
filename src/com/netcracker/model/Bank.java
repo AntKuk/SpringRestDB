@@ -1,14 +1,16 @@
 package com.netcracker.model;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 
 @Entity
 @Table(name="bank")
-public class Bank {
+public class Bank implements BasicEntity{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "bank_id_Sequence")
+    @SequenceGenerator(name = "bank_id_Sequence", sequenceName = "bank_seq")
     @Column(name = "idbank", nullable = false)
-    private int idBank;
+    private BigInteger id;
 
     @Column(name = "bankname", nullable = false)
     private String bankName;
@@ -32,12 +34,12 @@ public class Bank {
         this.coracc = coracc;
     }
 
-    public int getIdBank() {
-        return idBank;
+    public BigInteger getId() {
+        return id;
     }
 
-    public void setIdBank(int idBank) {
-        this.idBank = idBank;
+    public void setId(BigInteger id) {
+        this.id = id;
     }
 
     public String getBankName() {
@@ -75,7 +77,7 @@ public class Bank {
     @Override
     public String toString() {
         return "Bank{" +
-                "idBank=" + idBank +
+                "idBank=" + id +
                 ", bankName='" + bankName + '\'' +
                 ", city='" + city + '\'' +
                 ", bic=" + bic +

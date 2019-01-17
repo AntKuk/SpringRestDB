@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-//@EnableWebMvc
+@EnableWebMvc
 @ComponentScan(basePackages = "com.netcracker")
 @PropertySource(value = "classpath:application.properties")
 @EnableTransactionManagement
